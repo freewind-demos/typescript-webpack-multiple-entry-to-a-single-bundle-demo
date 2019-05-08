@@ -1,31 +1,20 @@
 import {Configuration} from 'webpack';
-import HtmlWebpackPlugin = require("html-webpack-plugin");
+import path from 'path';
 
 const config: Configuration = {
   mode: "development",
-  entry: './entry.ts',
+  entry: ['./entry1.ts', './entry2.ts'],
   output: {
-    path: __dirname,
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
   module: {
     rules: [{
-      test: /\.css$/,
-      use: [
-        {loader: 'style-loader'},
-        {loader: 'css-loader'}
-      ]
-    }, {
-      test: /\.tsx?$/,
+      test: /\.ts$/,
       loader: 'ts-loader',
       exclude: /node_modules/
     }]
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: 'index.html'
-    })
-  ]
+  }
 }
 
 export default config;

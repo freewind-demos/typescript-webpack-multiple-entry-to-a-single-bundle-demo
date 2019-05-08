@@ -1,7 +1,7 @@
-Webpack Config File in TypeScript Demo
-======================================
+Webpack Config Multiple Entry to A Single Bundle Demo
+======================================================
 
-Use typescript to write webpack config file.
+可以指定多个entry文件，最后bundle的时候会把它们连接在一起。
 
 ```
 npm install
